@@ -1,0 +1,66 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.cyou.fz173</groupId>
+  <artifactId>test-cms-api</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>test-cms-api</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	<maven.compiler.encoding>UTF-8</maven.compiler.encoding>
+	<cms-api-version>1.0.0</cms-api-version>
+	<dubbo-version>2.5.3</dubbo-version>
+	<org.springframework-version>3.2.2.RELEASE</org.springframework-version>
+	<c3p0-version>0.9.1.2</c3p0-version>
+	<service-api-commons-version>0.0.1-SNAPSHOT</service-api-commons-version>
+	<luci-mint-version>1.2.0</luci-mint-version>
+</properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+    <!-- Dubbo服务 -->
+	    <dependency>
+	        <groupId>com.alibaba</groupId>
+	        <artifactId>dubbo</artifactId>
+	        <version>${dubbo-version}</version>
+	        <exclusions>
+				<exclusion>
+				    <artifactId>spring</artifactId>
+					<groupId>org.springframework</groupId>    
+			    </exclusion>	            
+	        </exclusions>
+	    </dependency>
+	    <!--SpringFramework -->
+	    <dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+		<dependency>
+		  <groupId>org.springframework</groupId>
+		  <artifactId>spring-web</artifactId>
+		  <version>${org.springframework-version}</version>
+		</dependency>
+		<!-- zkClient -->
+	    <dependency>
+			<groupId>com.github.sgroschupf</groupId>
+			<artifactId>zkclient</artifactId>
+			<version>0.1</version>
+		</dependency>
+		<dependency>
+		   <groupId>com.cyou.fz173</groupId>
+			<artifactId>cms-api-service</artifactId>
+			<version>${cms-api-version}</version>    
+	    </dependency>
+  </dependencies>
+</project>
